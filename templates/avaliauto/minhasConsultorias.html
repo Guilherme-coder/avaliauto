@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+<title>AvaliAuto</title>
+
+<style>
+    *{
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    body{
+        margin-bottom: 0;
+        margin: 0;
+    }
+    .padding-side{
+      padding: 0 2em
+    }
+    h2{
+      font-size: 42px;
+    }
+    .header {
+        overflow: hidden;
+        background-color: #fefaff;
+        margin-top: 1em;
+        /* padding: 20px 10px; */
+      }
+
+      .header a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 12px;
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 25px;
+        border-radius: 4px;
+      }
+
+      .header > a.logo{
+        font-size: 2.8em;
+      }
+
+      .logo {
+        font-size: 2.5em;
+        font-weight: bold;
+        font-family: 'Lobster', cursive;
+      }
+
+      .header a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      .header a.active{
+        background-color: #d4cfcf;
+        color: white;
+      }
+
+      .header a.active:hover{
+        background-color: #c4bfbf;
+      }
+
+
+      .header-right {
+        float: right;
+      }
+
+      .login-disabled{
+        opacity: 0;
+      }
+
+      .items-login{
+        position: absolute;
+        top: 3.3em;
+        right: 1em;
+        background-color: #aaa;
+        border-radius: 7px;
+        padding: .4em 2em;
+      }
+
+      .item-login{
+        list-style: none;
+        color: white;
+      }
+
+      .show-modal{
+        opacity: 1;
+      }
+
+
+    .main-title{
+      width: 40%;
+      font-size: 74.68px;
+      height: 236.49px;
+    }
+
+    .title-area{
+      margin-top: 2.5em;
+      padding: 0;
+    }
+
+    .title-button-left{
+      border-radius: 0 28px 0 0;
+      border: none;
+      width: 250.02px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 22.78px;
+      font-weight: 500;
+      background-color: #666;
+      color: white;
+    }
+
+    .title-button-left:hover, .title-button-right:hover{
+      background-color: #8d8a8a;
+    }
+
+    .title-button-right{
+      border-radius: 6px 28px 0 0;
+      border: none;
+      width: 314px;
+      height: 50px;
+      cursor: pointer;
+      font-size: 22.78px;
+      font-weight: 500;
+      background-color: darkgray;
+      color: #fefaff;
+    }
+
+
+    .planos{
+      margin: 20px;
+      margin-top: 6em;
+    }
+
+    .cards{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: nowrap;
+        color: #fefaff;
+        text-align: center;
+    }
+
+    .first-card{
+        background: #d4cfcf;
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+        width: 360.7px;
+        height: 483.2px;
+        margin: 10px;
+        border-radius: 36px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .second-card{
+        background: #d4cfcf;
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+        width: 340.19px;
+        height: 444.63px;
+        margin: 10px;
+        border-radius: 36px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .third-card{
+        background: #d4cfcf;
+        position: relative;
+        flex: 1;
+        max-width: 400px;
+        width: 313.21px;
+        height: 419.49px;
+        margin: 10px;
+        border-radius: 36px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .cards{
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .card-title{
+      background-color:#8d8a8a;
+      border-radius: 36px 36px 0 0;
+      margin-top: 0;
+      padding-top: 10px;
+      padding-bottom: 17px;
+    }
+
+    .paragraph-cards{
+      padding: 0 1em;
+    }
+
+    .search-section{
+      display: flex;
+      flex-flow: column wrap;
+      width: 100%;
+      margin-top: 200px;
+      text-align: center;
+      margin: 9em 0;
+    }
+
+    .title-announcement{
+      font-size: 2.9em;
+      margin: 0;
+    }
+
+    .paragraph-announcement{
+      font-size: 2em;
+      margin: 0;
+    }
+
+    .search-bar input[type=text]{
+      background-color: darkgray;
+      width: 440.2px;
+      padding: 6px;
+      margin-top: 2em;
+      margin-right: 16px;
+      border: none;
+      border-radius: 11px;
+      font-size: 17px;
+      padding: 1em 4em;
+      border: 1px solid #ccc;
+    }
+    .search-button{
+      height: 56px;
+      vertical-align: bottom;
+      border: 2px solid darkgray;
+      border-radius: 11px;
+    }
+
+    .search-button:hover{
+      background-color: #cccc;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .search-button img{
+      width: 70%;
+    }
+
+    .footer-home{
+      background-color: darkgray;
+      padding: 3em 2em;
+    }
+
+    .logo-footer{
+      margin: 0;
+      padding: 0;
+    }
+
+    .items-social, .footer-home{
+      display: flex;
+      flex-direction: row;
+    }
+
+    .footer-home{
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .item-social{
+      list-style-type: none;
+      width: 60px;
+    }
+
+    .item-social > img{
+      width: 40px;
+    }
+
+
+
+
+
+
+    .map-area{
+      text-align: center;
+      height: 80vh;
+    }
+
+    .map-iframe{
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-area img{
+      width: 70%;
+    }
+
+    .calendar{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 3em 0;
+    }
+
+    .schedules-title{
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+
+    .schedule{
+      list-style-type: none;
+      padding: .9em;
+      margin: 1em;
+      background-color: #8d8a8a;
+      color: white;
+      border-radius: 0 13px 13px 13px;
+    }
+
+    .title-data{
+      font-size: 1.5em;
+      margin-bottom: 1em;
+    }
+
+    .data{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2em;
+    }
+
+    .data-row{
+      height: 3em;
+    }
+
+    .data-cel{
+      width: 4em;
+      text-align: center;
+    }
+
+    .selec{
+      border-radius: 25px;
+      background-color: #999;
+    }
+
+    .subtitle-consultoria{
+      display: block;
+      width: 100%;
+    }
+
+    .completa, .plus, .master{
+      padding: .3em .7em;
+      border-radius: 15px;
+    }
+
+    .completa{
+      background-color: #aaa;
+      color: #aaa;
+    }
+
+    .plus{
+      background-color: #888;
+      color: #888;
+    }
+
+    .master{
+      background-color: #666;
+      color: #666;
+    }
+
+    .abiliity, .availability{
+      width: 60%;
+      margin: 0 auto;
+    }
+
+    .skills{
+      width: 50%;
+    }
+
+    .skills-card{
+      border: 1px solid #888;
+      border-radius: 6px;
+      background-color: #999;
+      margin: .4em 0;
+      padding: 1em;
+      color: black;
+    }
+
+    .skills-card:nth-child(2n){
+      background-color: #fdfdfd;
+    }
+
+    .abiliity-title, .availability-title{
+      font-size: 2em;
+    }
+
+    .availability > img{
+      width: 90%;
+      margin-left: 10em;
+    }
+
+
+
+</style>
+
+</head>
+<body>
+
+
+    <nav class="header padding-side">
+        <a href="/avaliauto" class="logo">AvaliAuto</a>
+        <div class="header-right">
+            <a id="login" class="active" href="#">Sair</a>
+            <div class="login-disabled">
+                <ul class="items-login">
+                    <li class="item-login"><a href="./index.html">Sou cliente</a></li>
+                    <li class="item-login"><a href="./mecanico.html">Sou mecânico</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="title-area padding-side">
+        <button class="title-button-left">
+            <a>
+                Minhas consultorias
+            </a>
+        </button>
+        <button class="title-button-right">
+            <a href="/avaliauto/consultorias" style="color: black; text-decoration: none">
+                Buscar novas consultorias
+            </a>
+        </button>
+    </div>
+
+
+    <div class="calendar">
+        <div class="schedules">
+            <h3 class="schedules-title">Calendário de avaliações</h3>
+            <ul>
+                {% for cons in consultorias %}
+                    <li class="schedule" style="opacity: 1;">{{ cons.fabricanteVeiculo }} {{ cons.modeloVeiculo }} {{ cons.anoVeiculo }} - {{ cons.data }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="data">
+            <label class="title-data">Setembro de 2021</label>
+            <table>
+                <tr class="data-row">
+                    <td class="data-cel">Dom</td>
+                    <td class="data-cel">Seg</td>
+                    <td class="data-cel">Ter</td>
+                    <td class="data-cel">Qua</td>
+                    <td class="data-cel">Qui</td>
+                    <td class="data-cel">Sex</td>
+                    <td class="data-cel">Sab</td>
+                </tr>
+                <tr class="data-row">
+                    <td class="data-cel"></td>
+                    <td class="data-cel"></td>
+                    <td class="data-cel"></td>
+                    <td class="data-cel"></td>
+                    <td class="data-cel">1</td>
+                    <td class="data-cel">2</td>
+                    <td class="data-cel">3</td>
+                </tr>
+                <tr class="data-row">
+                    <td class="data-cel">4</td>
+                    <td class="data-cel">5</td>
+                    <td class="data-cel">6</td>
+                    <td class="data-cel">7</td>
+                    <td class="data-cel">8</td>
+                    <td class="data-cel">9</td>
+                    <td class="data-cel">10</td>
+                </tr>
+                <tr class="data-row">
+                    <td class="data-cel">11</td>
+                    <td class="data-cel">12</td>
+                    <td class="data-cel">13</td>
+                    <td class="data-cel">14</td>
+                    <td class="data-cel">15</td>
+                    <td class="data-cel">16</td>
+                    <td class="data-cel">17</td>
+                </tr>
+                <tr class="data-row">
+                    <td class="data-cel">18</td>
+                    <td class="data-cel selec">19</td>
+                    <td class="data-cel">20</td>
+                    <td class="data-cel">21</td>
+                    <td class="data-cel">22</td>
+                    <td class="data-cel">23</td>
+                    <td class="data-cel">24</td>
+                </tr>
+                <tr class="data-row">
+                    <td class="data-cel">25</td>
+                    <td class="data-cel">26</td>
+                    <td class="data-cel">27</td>
+                    <td class="data-cel">28</td>
+                    <td class="data-cel">29</td>
+                    <td class="data-cel">30</td>
+                    <td class="data-cel">31</td>
+                </tr>
+            </table>
+            <p class="subtitle-consultoria"><i class="completa">.</i> Consultoria Completa</p>
+            <p class="subtitle-consultoria"><i class="plus">.</i> Consultoria Plus</p>
+            <p class="subtitle-consultoria"><i class="master">.</i> Consultoria Master</p>
+        </div>
+    </div>
+
+    <div class="abiliity">
+        <h3 class="abiliity-title">Minhas habilidades</h3>
+        <div class="skills">
+            <button class="skills-card" disabled>Funilaria e Pintura</button>
+            <button class="skills-card" disabled>Capotaria</button>
+            <button class="skills-card" disabled>Eletrônica</button>
+            <button class="skills-card" disabled>Borracharia</button>
+            <button class="skills-card" disabled>Câmbio Automático</button>
+            <button class="skills-card" disabled>Motor</button>
+            <button class="skills-card" disabled>Martelinho de Ouro</button>
+        </div>
+    </div>
+
+    <div class="availability">
+        <h3 class="availability-title">Minhas disponibilidade</h3>
+        <table style="margin: 0 auto 3em auto;">
+            <tr class="data-row">
+                <td class="data-cel">Dom</td>
+                <td class="data-cel">Seg</td>
+                <td class="data-cel">Ter</td>
+                <td class="data-cel">Qua</td>
+                <td class="data-cel">Qui</td>
+                <td class="data-cel">Sex</td>
+                <td class="data-cel">Sab</td>
+            </tr>
+            <tr class="data-row">
+                <td class="data-cel"></td>
+                <td class="data-cel"></td>
+                <td class="data-cel"></td>
+                <td class="data-cel"></td>
+                <td class="data-cel">1</td>
+                <td class="data-cel selec">2</td>
+                <td class="data-cel">3</td>
+            </tr>
+            <tr class="data-row">
+                <td class="data-cel">4</td>
+                <td class="data-cel">5</td>
+                <td class="data-cel">6</td>
+                <td class="data-cel">7</td>
+                <td class="data-cel">8</td>
+                <td class="data-cel">9</td>
+                <td class="data-cel">10</td>
+            </tr>
+            <tr class="data-row">
+                <td class="data-cel">11</td>
+                <td class="data-cel">12</td>
+                <td class="data-cel">13</td>
+                <td class="data-cel">14</td>
+                <td class="data-cel">15</td>
+                <td class="data-cel">16</td>
+                <td class="data-cel">17</td>
+            </tr>
+            <tr class="data-row">
+                <td class="data-cel">18</td>
+                <td class="data-cel">19</td>
+                <td class="data-cel">20</td>
+                <td class="data-cel">21</td>
+                <td class="data-cel">22</td>
+                <td class="data-cel">23</td>
+                <td class="data-cel">24</td>
+            </tr>
+            <tr class="data-row">
+                <td class="data-cel">25</td>
+                <td class="data-cel">26</td>
+                <td class="data-cel">27</td>
+                <td class="data-cel">28</td>
+                <td class="data-cel">29</td>
+                <td class="data-cel">30</td>
+                <td class="data-cel">31</td>
+            </tr>
+        </table>
+    </div>
+
+    <footer class="footer-home">
+        <h3 class="logo logo-footer">AvaliAuto</h3>
+        <ul class="items-social">
+            <li class="item-social"><img src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v1.png"/></li>
+            <li class="item-social"><img src="https://img.icons8.com/ios-glyphs/30/000000/phone--v1.png"/></li>
+            <li class="item-social"><img src="https://img.icons8.com/ios-glyphs/30/000000/instagram-new.png"/></li>
+            <li class="item-social"><img src="https://img.icons8.com/ios-glyphs/30/000000/facebook.png"/></li>
+        </ul>
+
+    </footer>
+    <script src="./script.js"></script>
+</body></html>
