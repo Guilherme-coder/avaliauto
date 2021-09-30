@@ -291,12 +291,12 @@
 
         {% for cons in consultorias %}
             <div class="consultancies">
-                <p> <strong>Fabricante do veículo: </strong> {{ cons.fabricanteVeiculo }}</p>
-                <p> <strong>Modelo do veículo: </strong> {{ cons.modeloVeiculo }}</p>
+                <p> <strong>Fabricante do veículo: </strong> {{ cons.veiculo.fabricanteVeiculo }}</p>
+                <p> <strong>Modelo do veículo: </strong> {{ cons.veiculo.modeloVeiculo }}</p>
+                <p> <strong>Ano do veículo: </strong> {{ cons.veiculo.anoVeiculo }}</p>
                 <p> <strong>Plano: </strong> {{ cons.plano }}</p>
                 <p> <strong>Data da consultoria: </strong> {{ cons.data }}</p>
                 <p> <strong>Local da consultoria: </strong> {{ cons.local }}</p>
-                <p> <strong>Ano do veículo: </strong> {{ cons.anoVeiculo }}</p>
                 <form class="form form-inline" action="{% url 'avaliauto:aceitarConsultoria' cons.id %}" method="POST">
                     {% csrf_token %}
                     <button class="accept" type="submit">Aceitar esta consultoria</button>
